@@ -5,7 +5,7 @@ import streamlit as st
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import google.generativeai as genai
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 
 
 
@@ -23,7 +23,11 @@ def get_pdf_text(pdf_path):
 
 # Function to split text into chunks
 def get_text_chunks(text):
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=1000)
+    text_splitter = RecursiveCharacterTextSplitter(
+    separators=["\n\n", "\n", " ", ""],
+    chunk_size=10000, 
+    chunk_overlap=1000,
+    )
     chunks = text_splitter.split_text(text)
     return chunks
 
