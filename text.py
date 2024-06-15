@@ -7,8 +7,6 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import google.generativeai as genai
 from langchain_community.vectorstores import FAISS
 
-
-
 # Load environment variables
 api_key = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=api_key)
