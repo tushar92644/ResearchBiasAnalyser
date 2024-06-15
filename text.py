@@ -83,6 +83,9 @@ def main():
             font-size: 0.8em;
             color: #888;
         }
+        .css-1lsmgbg.egzxvld0 {
+            visibility: hidden;
+        }
     </style>
     """, unsafe_allow_html=True)
 
